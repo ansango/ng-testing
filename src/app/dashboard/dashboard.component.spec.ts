@@ -32,25 +32,25 @@ describe('DashboardComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should be created', () => {
+  it('Should be created', () => {
     expect(component).toBeTruthy();
   });
 
-  it('should display "Top Heroes" as headline', () => {
+  it('Should display "Top Heroes" as headline', () => {
     expect(fixture.nativeElement.querySelector('h2').textContent).toEqual(
       'Top Heroes'
     );
   });
 
   it(
-    'should call heroService',
+    'Should call heroService',
     waitForAsync(() => {
       expect(getHeroesSpy.calls.any()).toBe(true);
     })
   );
 
   it(
-    'should display 4 links',
+    'Should display 4 links',
     waitForAsync(() => {
       expect(fixture.nativeElement.querySelectorAll('a').length).toEqual(4);
     })

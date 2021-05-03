@@ -26,11 +26,11 @@ describe('HeroService', () => {
     });
     service = TestBed.inject(HeroService);
   });
-  it('can load instance', () => {
+  it('Can load instance', () => {
     expect(service).toBeTruthy();
   });
   describe('addHero', () => {
-    it('makes expected calls', () => {
+    it('Makes expected calls', () => {
       const httpTestingController = TestBed.inject(HttpTestingController);
       const heroStub: Hero = TestBed.inject(Hero);
       service.addHero(heroStub).subscribe((res) => {
@@ -46,7 +46,7 @@ describe('HeroService', () => {
     });
   });
   describe('updateHero', () => {
-    it('makes expected calls', () => {
+    it('Makes expected calls', () => {
       const httpTestingController = TestBed.inject(HttpTestingController);
       const heroStub: Hero = TestBed.inject(Hero);
       service.updateHero(heroStub).subscribe((res) => {
@@ -62,7 +62,7 @@ describe('HeroService', () => {
     });
   });
   describe('getHeroes', () => {
-    it('makes expected calls', () => {
+    it('Makes expected calls', () => {
       const httpTestingController = TestBed.inject(HttpTestingController);
       const hero = TestBed.inject(Hero);
       service.getHeroes().subscribe((res) => {
@@ -79,7 +79,7 @@ describe('HeroService', () => {
   });
 
   describe('getHero', () => {
-    it('gets hero with http get', () => {
+    it('Gets hero with http get', () => {
       const heroStub: Hero = TestBed.inject(Hero);
       const id = 56;
       service.getHero(id).subscribe((res) => {
@@ -98,7 +98,7 @@ describe('HeroService', () => {
   });
 
   describe('deleteHero', () => {
-    it('deletes hero with http del', () => {
+    it('Deletes hero with http del', () => {
       const heroStub: Hero = TestBed.inject(Hero);
       heroStub.id = 56;
       service.deleteHero(heroStub).subscribe((res) => {
@@ -115,7 +115,7 @@ describe('HeroService', () => {
       expect(messageService.messages[0]).toContain('deleted hero');
     });
 
-    it('deletes hero by id with http del', () => {
+    it('Deletes hero with http del', () => {
       const heroStub: Hero = TestBed.inject(Hero);
       const id = 56;
       service.deleteHero(id).subscribe((res) => {
@@ -135,7 +135,7 @@ describe('HeroService', () => {
   });
 
   describe('getHeroNo404', () => {
-    it('handles 404 error', () => {
+    it('Handle 404', () => {
       service.getHero(56).subscribe((res) => {
         expect(res).toEqual(undefined);
       });

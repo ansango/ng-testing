@@ -11,17 +11,17 @@ describe('AppComponent', () => {
     TestBed.configureTestingModule({
       imports: [RouterTestingModule],
       schemas: [NO_ERRORS_SCHEMA],
-      declarations: [AppComponent]
+      declarations: [AppComponent],
     });
     fixture = TestBed.createComponent(AppComponent);
     component = fixture.componentInstance;
   });
 
-  it('can load instance', () => {
+  it('Can load instance', () => {
     expect(component).toBeTruthy();
   });
 
-  it(`title has default value`, () => {
+  it(`Title has default value`, () => {
     expect(component.title).toEqual(`Tour of Heroes`);
   });
 });

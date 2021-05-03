@@ -31,11 +31,11 @@ describe('HeroesComponent', () => {
     component = fixture.componentInstance;
   });
 
-  it('should be created', () => {
+  it('Should be created', () => {
     expect(component).toBeTruthy();
   });
 
-  describe('Use Cases', () => {
+  describe('Cases', () => {
     beforeEach(() => {
       const heroServiceStub = TestBed.inject(HeroService);
       spyOn(heroServiceStub, 'getHeroes').and.returnValue(

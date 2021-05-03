@@ -9,19 +9,19 @@ describe('MessageService', () => {
     service = TestBed.inject(MessageService);
   });
 
-  it('can load instance', () => {
+  it('Can load instance', () => {
     expect(service).toBeTruthy();
   });
 
-  it(`messages has default value`, () => {
+  it(`Messages has default value`, () => {
     expect(service.messages).toEqual([]);
   });
 
-  it('add messages', () => {
+  it('Add messages', () => {
     service.add('Bombasto');
     expect(service.messages).toEqual(['Bombasto']);
   });
-  it('clear messages', () => {
+  it('Clear messages', () => {
     service.clear();
     expect(service.messages).toEqual([]);
   });
