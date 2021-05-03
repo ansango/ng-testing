@@ -81,13 +81,13 @@ describe('HeroService', () => {
   describe('getHero', () => {
     it('gets hero with http get', () => {
       const heroStub: Hero = TestBed.inject(Hero);
-      const id = 123;
+      const id = 56;
       service.getHero(id).subscribe((res) => {
         expect(res).toEqual(heroStub);
       });
 
       const httpTestingController = TestBed.inject(HttpTestingController);
-      const req = httpTestingController.expectOne('api/heroes/123');
+      const req = httpTestingController.expectOne('api/heroes/56');
       expect(req.request.method).toEqual('GET');
       req.flush(heroStub);
 
@@ -100,7 +100,7 @@ describe('HeroService', () => {
   describe('deleteHero', () => {
     it('deletes hero with http del', () => {
       const heroStub: Hero = TestBed.inject(Hero);
-      heroStub.id = 123;
+      heroStub.id = 56;
       service.deleteHero(heroStub).subscribe((res) => {
         expect(res).toEqual(heroStub);
       });
@@ -117,7 +117,7 @@ describe('HeroService', () => {
 
     it('deletes hero by id with http del', () => {
       const heroStub: Hero = TestBed.inject(Hero);
-      const id = 123;
+      const id = 56;
       service.deleteHero(id).subscribe((res) => {
         expect(res).toEqual(heroStub);
       });
@@ -136,12 +136,12 @@ describe('HeroService', () => {
 
   describe('getHeroNo404', () => {
     it('handles 404 error', () => {
-      service.getHero(123).subscribe((res) => {
+      service.getHero(56).subscribe((res) => {
         expect(res).toEqual(undefined);
       });
 
       const httpTestingController = TestBed.inject(HttpTestingController);
-      const req = httpTestingController.expectOne('api/heroes/123');
+      const req = httpTestingController.expectOne('api/heroes/56');
 
       spyOn(console, 'error');
 
